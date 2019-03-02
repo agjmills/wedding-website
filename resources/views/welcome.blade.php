@@ -7,14 +7,14 @@
         <title>Veronika &amp; Alex</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Nanum Pen Script', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    02.02.2020
+                    01.02.2020
                 </div>
 
                 <div class="links">
