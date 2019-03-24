@@ -5,7 +5,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row mt-5 mb-5">
-            <div class="col-md-2 offset-md-5">
+            <div class="col-md-12 text-center">
                 <h1>Crown &amp; Sandys</h1>
             </div>
         </div>

@@ -13,6 +13,11 @@ body {
     color: #666;
 }
 
+h1 {
+    font-size: 3em;
+}
+
+
 p.lead {
     font-size: 1.2em;
 }
@@ -25,12 +30,11 @@ p.lead {
     margin-top: 5em;
     .invitation-row {
         p {
-            font-family: 'Goudy Old Style';
+            font-family: 'Goudy Old Style', serif;
         }
 
         h1 {
-            font-family: 'Allura';
-            font-size: 3em;
+            font-family: 'Allura', cursive;
         }
     }
 
