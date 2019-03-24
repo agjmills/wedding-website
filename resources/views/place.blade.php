@@ -27,28 +27,26 @@
                 </p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div id="google-map">
+                    <iframe frameborder="0" style="border:0"
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJaVeVDc_zcEgRRxgb-LFIfTs"
+                            allowfullscreen=""></iframe>
+                </div>
             </div>
-            <div class="col-md-6">
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>Crown and Sandys</p>
+                <p>
+                    Main Road<br>
+                    Ombersley<br>
+                    WR9 0EW
+                </p>
 
+                <p>01905 620252</p>
             </div>
         </div>
     </div>
-@stop
-
-@section('js')
-    <script>
-        function initMap() {
-            var uluru = {lat: -25.344, lng: 131.036};
-            var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 4, center: uluru});
-            var marker = new google.maps.Marker({position: uluru, map: map});
-        }
-    </script>
-
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key={{ config('google.maps.apiKey') }}&callback=initMap">
-    </script>
 @stop

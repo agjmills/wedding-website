@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Veronika & Alex')</title>
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet" type="text/css">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
