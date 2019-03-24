@@ -14,7 +14,6 @@ body {
 }
 
 h1 {
-    font-size: 3em;
 }
 
 
@@ -26,6 +25,10 @@ p.lead {
     text-transform: uppercase;
 }
 
+h1 {
+    font-size: 2.5em;
+}
+
 .welcome-container {
     margin-top: 5em;
     .invitation-row {
@@ -35,6 +38,7 @@ p.lead {
 
         h1 {
             font-family: 'Allura', cursive;
+            font-size: 3em;
         }
     }
 
