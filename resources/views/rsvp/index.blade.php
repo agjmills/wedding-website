@@ -1,5 +1,7 @@
 @extends('layouts.wedding')
 
+@section('title', 'Veronika & Alex | RSVP')
+
 @section('content')
-    01.02.2020
+
 @stop
