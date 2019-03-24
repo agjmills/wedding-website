@@ -22,3 +22,10 @@
         <span class="sr-only">(current)</span>
     @endif
 </a>
+
+<a class="nav-item nav-link {{ request()->is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">
+    Contact
+    @if (request()->is('contact'))
+        <span class="sr-only">(current)</span>
+    @endif
+</a>
