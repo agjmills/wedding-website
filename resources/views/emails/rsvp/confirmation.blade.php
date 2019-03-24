@@ -12,7 +12,7 @@
         </p>
     @endif
 
-    @if ($rsvp->attending === 'not attending')
+    @if ($rsvp->attending === 'evening')
         <p>
             Thank you for confirming that you will be attending the evening of our wedding celebration on 1<sup>st</sup> February 2020.
         </p>
@@ -21,7 +21,7 @@
         </p>
     @endif
 
-    @if ($rsvp->attending === 'evening')
+    @if ($rsvp->attending === 'not attending')
         <p>We're really sorry you can't make it to our wedding celebration</p>
     @endif
 @stop
