@@ -15,9 +15,16 @@ class RsvpFormRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'telephone' => 'required',
-            'attending' => 'bool',
+            'attending' => 'required',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'attending.required' => 'Please select whether you are attending.',
         ];
     }
 }

@@ -13,7 +13,7 @@ class AddRsvpTable extends Migration
            $table->text('name');
            $table->string('email');
            $table->string('telephone');
-           $table->boolean('attending');
+           $table->string('attending');
            $table->timestamps();
         });
     }
