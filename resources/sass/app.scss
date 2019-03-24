@@ -1,9 +1,5 @@
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
 @import 'variables';
+@import 'fonts';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
@@ -12,4 +8,33 @@ body {
     background-image: url('/img/background.jpg');
     background-repeat:no-repeat;
     background-attachment: fixed;
+    font-family: 'Futura Book', sans-serif;
+    font-size: 1.5em;
+    color: #666;
+}
+
+.navbar-nav {
+    text-transform: uppercase;
+}
+
+.welcome-container {
+    margin-top: 5em;
+    .invitation-row {
+        p {
+            font-family: 'Goudy Old Style';
+        }
+
+        h1 {
+            font-family: 'Allura';
+            font-size: 3em;
+        }
+    }
+
+    .detail-row {
+        font-size: 0.8em;
+    }
+
+    img {
+        width: 300px;
+    }
 }
