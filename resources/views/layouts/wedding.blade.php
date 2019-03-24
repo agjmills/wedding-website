@@ -16,9 +16,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Place</a>
-            <a class="nav-item nav-link" href="#">Accommodations</a>
-            <a class="nav-item nav-link" href="#">RSVP</a>
+            <a class="nav-item nav-link" href="{{ route('place') }}">Place</a>
+            <a class="nav-item nav-link" href="{{ route('accommodations') }}">Accommodations</a>
+            <a class="nav-item nav-link" href="{{ route('rsvp.index') }}">RSVP</a>
         </div>
     </div>
 </nav>

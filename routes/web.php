@@ -15,4 +15,12 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('place', function() {
+    return view('place');
+})->name('place');
+
+Route::get('accommodations', function() {
+   return view('accomodations');
+})->name('accommodations');
+
 Route::get('rsvp', 'RsvpController@index')->name('rsvp.index');
