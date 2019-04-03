@@ -12,11 +12,14 @@
         <div class="row detail-row">
             <div class="col-md-12 text-center">
                 <h2>1<sup>st</sup> February 2020</h2>
+                <p class="lead">13:00</p>
                 <p>
-                    Crown and Sandys<br>
-                    Main Road<br>
-                    Ombersley<br>
-                    WR9 0EW
+                    <a href="{{ route('place') }}">
+                        Crown and Sandys<br>
+                        Main Road<br>
+                        Ombersley<br>
+                        WR9 0EW
+                    </a>
                 </p>
             </div>
         </div>
