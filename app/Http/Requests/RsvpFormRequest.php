@@ -18,6 +18,7 @@ class RsvpFormRequest extends FormRequest
             'email' => 'required|email',
             'telephone' => 'required',
             'attending' => 'required',
+            'message' => 'nullable',
         ];
     }
 

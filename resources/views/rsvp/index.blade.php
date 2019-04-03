@@ -38,6 +38,11 @@
 
                             </div>
 
+                            <div class="form-group">
+                                <label for="message">Message (optional)</label>
+                                <textarea name="message" class="form-control" id="message" maxlength="65535">{{ old('message') }}</textarea>
+                            </div>
+
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="radio" class="form-check-input" name="attending" value="attending">
@@ -61,7 +66,7 @@
                             @endif
                         </div>
                         <div class="card-footer">
-                            <input type="submit" class="btn btn-lg btn-primary" name="submit" value="RSVP">
+                            <input type="submit" class="btn btn-lg btn-primary pull-right" name="submit" value="Submit">
                         </div>
                     </div>
                 </form>

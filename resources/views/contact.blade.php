@@ -15,14 +15,14 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h2>Veronika</h2>
-                <p>07761 823280</p>
-                <p>getequifit@gmail.com</p>
+                <h2>Alex</h2>
+                <p><a href="tel:07828179138">07828 179138</a></p>
+                <p><a href="mailto:alex@asdfx.us">alex@asdfx.us</a></p>
             </div>
             <div class="col-md-6">
-                <h2>Alex</h2>
-                <p>07828 179138</p>
-                <p>alex@asdfx.us</p>
+                <h2>Veronika</h2>
+                <p><a href="tel:07761823280">07761 823280</a></p>
+                <p><a href="mailto:getequifit@gmail.com">getequifit@gmail.com</a></p>
             </div>
         </div>
     </div>

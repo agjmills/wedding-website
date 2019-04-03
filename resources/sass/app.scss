@@ -67,3 +67,12 @@ small {
     font-size: 14px;
     font-style: italic;
 }
+
+a {
+    color: #666;
+    text-decoration: none;
+    &:hover {
+        color: #666;
+        text-decoration: underline;
+    }
+}
