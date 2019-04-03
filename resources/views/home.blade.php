@@ -14,7 +14,7 @@
                 <h2>1<sup>st</sup> February 2020</h2>
                 <p class="lead">13:00</p>
                 <p>
-                    <a href="{{ route('place') }}">
+                    <a href="{{ route('venue') }}">
                         Crown and Sandys<br>
                         Main Road<br>
                         Ombersley<br>
