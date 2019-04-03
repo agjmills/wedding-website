@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('place', function () {
-    return view('place');
-})->name('place');
+Route::get('venue', function () {
+    return view('venue');
+})->name('venue');
 
 Route::get('accommodations', function () {
     return view('accomodations');

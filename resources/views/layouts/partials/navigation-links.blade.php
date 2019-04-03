@@ -4,9 +4,9 @@
         <span class="sr-only">(current)</span>
     @endif
 </a>
-<a class="nav-item nav-link {{ request()->is('place') ? 'active' : '' }}" href="{{ route('place') }}">
-    Place
-    @if (request()->is('place'))
+<a class="nav-item nav-link {{ request()->is('venue') ? 'active' : '' }}" href="{{ route('venue') }}">
+    Venue
+    @if (request()->is('venue'))
         <span class="sr-only">(current)</span>
     @endif
 </a>
