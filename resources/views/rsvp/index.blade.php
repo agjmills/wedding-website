@@ -15,6 +15,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Name(s)</label>
+                                <small>Please enter the names of those who were listed on your invitation</small>
                                 <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                                 @if ($errors->has('name'))
                                     <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -22,6 +23,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="email">Email address</label>
+                                <small>Please enter the email address for one person in your party</small>
                                 <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}">
                                 @if ($errors->has('email'))
                                     <span class="text-danger">{{ $errors->first('email') }}</span>
