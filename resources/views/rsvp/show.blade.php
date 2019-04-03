@@ -31,6 +31,7 @@
                     <p>We're really sorry you can't make it to our wedding celebration</p>
                     <p>You should receive an email in the next few minutes confirming your RSVP.</p>
                 @endif
+                <p>If you haven't received the email in the next 30 minutes, please check your spam folder.</p>
             </div>
         </div>
     </div>
