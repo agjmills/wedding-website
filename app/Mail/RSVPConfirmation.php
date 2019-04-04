@@ -23,6 +23,6 @@ class RSVPConfirmation extends Mailable
 
     public function build()
     {
-        return $this->view('emails.rsvp.confirmation');
+        return $this->view('emails.rsvp.confirmation')->text('emails.rsvp.confirmation_plain');
     }
 }
