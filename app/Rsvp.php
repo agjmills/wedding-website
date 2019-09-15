@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
 class Rsvp extends Model
@@ -32,5 +33,15 @@ class Rsvp extends Model
     public function getIncrementing()
     {
         return false;
+    }
+
+    public function adult_choices(): HasMany
+    {
+        return $this->hasMany(AdultChoice::class);
+    }
+
+    public function child_choices(): HasMany
+    {
+        return $this->hasMany(ChildChoice::class);
     }
 }
