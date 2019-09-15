@@ -18,12 +18,13 @@ class AddUuidColumnToRsvpTable extends Migration
         });
 
         \App\Rsvp::all()->each(function (\App\Rsvp $rsvp) {
-           $rsvp->uuid = \Ramsey\Uuid\Uuid::uuid4();
-           $rsvp->save();
+            $rsvp->uuid = \Illuminate\Support\Str::uuid();
+            $rsvp->save();
         });
 
         Schema::table('rsvp', function (Blueprint $table) {
-           $table->string('uuid', 36)->nullable(false)->change();
+            $table->dropColumn('id');
+            $table->string('uuid', 36)->nullable(false)->primary()->change();
         });
     }
 
@@ -36,6 +37,7 @@ class AddUuidColumnToRsvpTable extends Migration
     {
         Schema::table('rsvp', function (Blueprint $table) {
             $table->dropColumn('uuid');
+            $table->increments('id');
         });
     }
 }

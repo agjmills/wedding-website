@@ -18,4 +18,19 @@ class Rsvp extends Model
             $rsvp->uuid = Str::uuid();
         });
     }
+
+    public function getKeyType()
+    {
+        return 'string';
+    }
+
+    public function getKeyName()
+    {
+        return 'uuid';
+    }
+
+    public function getIncrementing()
+    {
+        return false;
+    }
 }
