@@ -30,3 +30,4 @@ Route::get('contact', function () {
 Route::get('rsvp', 'RsvpController@index')->name('rsvp.index');
 Route::post('rsvp', 'RsvpController@store')->name('rsvp.store');
 Route::get('rsvp/thank-you', 'RsvpController@show')->name('rsvp.show');
+Route::get('menu-choices/{rsvp}', 'MenuChoiceController@create')->name('menu-choices.create');
