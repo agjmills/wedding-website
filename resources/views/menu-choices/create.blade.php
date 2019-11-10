@@ -34,7 +34,7 @@
                                                     <div class="form-group">
                                                         <label for="adult_name[{{ $adult->id }}]">Name</label>
                                                         <input type="text" class="form-control" name="adult_name[{{ $adult->id }}]" id="adult_name[{{ $adult->id }}]"
-                                                               value="{{ old('adult_name.'.$adult->id) }}">
+                                                               value="{{ isset($adult->name) ? $adult->name : old('adult_name.'.$adult->id) }}">
                                                         @if ($errors->has('adult_name.'.$adult->id.''))
                                                             <span
                                                                 class="text-danger">{{ $errors->first('adult_name.'.$adult->id) }}</span>
@@ -49,8 +49,13 @@
                                                                 starter
                                                             </option>
                                                             @foreach($adult_starters as $starter)
+                                                                @if (isset($adult->starter_id) && $adult->starter_id === $starter->id)
+                                                                    <option
+                                                                        value="{{ $starter->id }}" selected>{{ $starter->name }}</option>
+                                                                @else
                                                                 <option
                                                                     value="{{ $starter->id }}">{{ $starter->name }}</option>
+                                                                @endif
                                                             @endforeach
                                                         </select>
 
@@ -70,8 +75,13 @@
                                                                 course
                                                             </option>
                                                             @foreach($adult_main_courses as $main_course)
+                                                                @if (isset($adult->main_course_id) && $main_course->id === $adult->main_course_id)
+                                                                    <option
+                                                                        value="{{ $main_course->id }}" selected>{{ $main_course->name }}</option>
+                                                                @else
                                                                 <option
                                                                     value="{{ $main_course->id }}">{{ $main_course->name }}</option>
+                                                                @endif
                                                             @endforeach
                                                         </select>
                                                         @if ($errors->has('adult_main_course.'.$adult->id.''))
@@ -90,8 +100,13 @@
                                                                 dessert
                                                             </option>
                                                             @foreach($adult_desserts as $dessert)
+                                                                @if (isset($adult->dessert_id) && $dessert->id === $adult->dessert_id)
+                                                                    <option
+                                                                        value="{{ $dessert->id }}" selected>{{ $dessert->name }}</option>
+                                                                @else
                                                                 <option
                                                                     value="{{ $dessert->id }}">{{ $dessert->name }}</option>
+                                                                @endif
                                                             @endforeach
                                                         </select>
 
@@ -106,20 +121,13 @@
                                                     <div class="form-group">
                                                         <label for="adult_requirements[{{ $adult->id }}]">Special/Dietary Requirements</label>
                                                         <input type="text" class="form-control" name="adult_requirements[{{ $adult->id }}]" id="adult_requirements[{{ $adult->id }}]"
-                                                               value="{{ old('adult_requirements.'.$adult->id) }}">
+                                                               value="{{ isset($adult->dietary) ? $adult->dietary : old('adult_requirements.'.$adult->id) }}">
                                                         @if ($errors->has('adult_requirements.'.$adult->id.''))
                                                             <span
                                                                 class="text-danger">{{ $errors->first('adult_requirements.'.$adult->id) }}</span>
                                                         @endif
                                                     </div>
                                                 </li>
-
-                                                <li class="list-group-item">
-                                                    <input type="submit" class="btn btn-lg btn-primary pull-right"
-                                                           name="submit"
-                                                           value="Save">
-                                                </li>
-
                                             </ul>
                                         </div>
                                     @endforeach
@@ -136,7 +144,7 @@
                                                     <div class="form-group">
                                                         <label for="name">Name</label>
                                                         <input type="text" class="form-control" name="name" id="name"
-                                                               value="{{ old('name') }}">
+                                                               value="{{ isset($child->name) ? $child->name : old('name') }}">
                                                         @if ($errors->has('name'))
                                                             <span
                                                                 class="text-danger">{{ $errors->first('name') }}</span>
@@ -151,8 +159,13 @@
                                                                 starter
                                                             </option>
                                                             @foreach($child_starters as $starter)
+                                                                @if (isset($child->starter_id) && $starter->id === $child->starter_id)
+                                                                    <option
+                                                                        value="{{ $starter->id }}" selected>{{ $starter->name }}</option>
+                                                                @else
                                                                 <option
                                                                     value="{{ $starter->id }}">{{ $starter->name }}</option>
+                                                                @endif
                                                             @endforeach
                                                         </select>
                                                         @if ($errors->has('starter'))
@@ -169,8 +182,13 @@
                                                                 course
                                                             </option>
                                                             @foreach($child_main_courses as $main_course)
+                                                                @if (isset($child->main_course_id) && $main_course->id === $child->main_course_id)
+                                                                    <option
+                                                                        value="{{ $main_course->id }}" selected>{{ $main_course->name }}</option>
+                                                                @else
                                                                 <option
                                                                     value="{{ $main_course->id }}">{{ $main_course->name }}</option>
+                                                                @endif
                                                             @endforeach
                                                         </select>
                                                         @if ($errors->has('main_course'))
@@ -187,8 +205,13 @@
                                                                 dessert
                                                             </option>
                                                             @foreach($child_desserts as $dessert)
-                                                                <option
-                                                                    value="{{ $dessert->id }}">{{ $dessert->name }}</option>
+                                                                @if (isset($child->dessert_id) && $dessert->id === $child->dessert_id)
+                                                                    <option
+                                                                        value="{{ $dessert->id }}" selected>{{ $dessert->name }}</option>
+                                                                @else
+                                                                    <option
+                                                                        value="{{ $dessert->id }}">{{ $dessert->name }}</option>
+                                                                @endif
                                                             @endforeach
                                                         </select>
                                                         @if ($errors->has('dessert'))
@@ -198,13 +221,26 @@
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item">
-                                                    <input type="submit" class="btn btn-lg btn-primary pull-right"
-                                                           name="submit"
-                                                           value="Save">
+                                                    <div class="form-group">
+                                                        <label for="child_requirements[{{ $child->id }}]">Special/Dietary Requirements</label>
+                                                        <input type="text" class="form-control" name="child_requirements[{{ $child->id }}]" id="child_requirements[{{ $child->id }}]"
+                                                               value="{{ isset($child->dietary) ? $child->dietary : old('child_requirements.'.$child->id) }}">
+                                                        @if ($errors->has('child_requirements.'.$child->id.''))
+                                                            <span
+                                                                class="text-danger">{{ $errors->first('child_requirements.'.$child->id) }}</span>
+                                                        @endif
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </div>
                                     @endforeach
+                                </div>
+                                <div class="card-footer">
+                                    <li class="list-group-item text-center">
+                                        <input type="submit" class="btn btn-lg btn-primary pull-right"
+                                               name="submit"
+                                               value="Save">
+                                    </li>
                                 </div>
                             </div>
                         </form>
