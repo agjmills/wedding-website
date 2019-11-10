@@ -18,7 +18,7 @@ class AddUuidColumnToRsvpTable extends Migration
         });
 
         \App\Rsvp::all()->each(function (\App\Rsvp $rsvp) {
-            $rsvp->uuid = \Illuminate\Support\Str::uuid();
+            $rsvp->uuid = \Illuminate\Support\Str::uuid()->toString();
             $rsvp->save();
         });
 
