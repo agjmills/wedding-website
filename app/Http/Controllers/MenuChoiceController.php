@@ -6,9 +6,12 @@ use App\AdultChoice;
 use App\ChildChoice;
 use App\Dessert;
 use App\Http\Requests\MenuChoiceFormRequest;
+use App\Mail\MenuChoiceConfirmation;
+use App\Mail\RSVPConfirmation;
 use App\MainCourse;
 use App\Rsvp;
 use App\Starter;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class MenuChoiceController extends Controller
@@ -47,6 +50,9 @@ class MenuChoiceController extends Controller
             $choice = ChildChoice::find($id);
             $choice->update($child);
         }
+
+
+        Mail::to($rsvp->email)->bcc('alex@asdfx.us')->send(new MenuChoiceConfirmation($rsvp));
 
         return redirect()->route('menu-choices.show', $rsvp);
     }
