@@ -16,7 +16,7 @@ class Rsvp extends Model
     {
         parent::boot();
         static::creating(function ($rsvp) {
-            $rsvp->uuid = Str::uuid();
+            $rsvp->uuid = Str::uuid()->toString();
         });
     }
 
