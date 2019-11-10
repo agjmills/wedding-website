@@ -9,7 +9,7 @@ use Illuminate\Console\Command;
 
 class MakeChoiceSlots extends Command
 {
-    protected $signature = 'menu:make-choice-slots';
+    protected $signature = 'menu-choices:make-slots';
 
     protected $description = 'Make slots for all of the people that person is responsible for';
 
