@@ -10,7 +10,7 @@ class Rsvp extends Model
 {
     protected $table = 'rsvp';
 
-    protected $fillable = ['name', 'email', 'telephone', 'attending', 'message'];
+    protected $fillable = ['name', 'email', 'telephone', 'attending', 'message', 'uuid'];
 
     protected static function boot()
     {
