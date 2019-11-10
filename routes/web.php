@@ -31,3 +31,5 @@ Route::get('rsvp', 'RsvpController@index')->name('rsvp.index');
 Route::post('rsvp', 'RsvpController@store')->name('rsvp.store');
 Route::get('rsvp/thank-you', 'RsvpController@show')->name('rsvp.show');
 Route::get('menu-choices/{rsvp}', 'MenuChoiceController@create')->name('menu-choices.create');
+Route::post('menu-choices/{rsvp}', 'MenuChoiceController@update')->name('menu-choices.update');
+Route::get('menu-choices/{rsvp}/complete', 'MenuChoiceController@show')->name('menu-choices.show');

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Starter extends Model
 {
-    protected $table = 'starter';
+    protected $table = 'starters';
 }
