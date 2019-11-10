@@ -15,7 +15,7 @@ class SendMenuChoiceEmails extends Command
      *
      * @var string
      */
-    protected $signature = 'menu-choices:send-emails';
+    protected $signature = 'menu-choices:send-emails {uuid}';
 
     /**
      * The console command description.
@@ -41,7 +41,7 @@ class SendMenuChoiceEmails extends Command
      */
     public function handle()
     {
-        $rsvps = Rsvp::where('attending', 'attending')->get();
+        $rsvps = Rsvp::where('attending', 'attending')->where('uuid', $this->argument('uuid'))->get();
         $rsvps->each(function (Rsvp $rsvp) {
             Mail::to($rsvp->email)->bcc('alex@asdfx.us')->send(new MenuChoiceSelection($rsvp));
             $this->info('Sending email to:' . $rsvp->email);
