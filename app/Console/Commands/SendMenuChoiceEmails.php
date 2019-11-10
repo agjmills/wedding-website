@@ -45,7 +45,6 @@ class SendMenuChoiceEmails extends Command
         $rsvps->each(function (Rsvp $rsvp) {
             Mail::to($rsvp->email)->bcc('alex@asdfx.us')->send(new MenuChoiceSelection($rsvp));
             $this->info('Sending email to:' . $rsvp->email);
-            sleep(1);
         });
     }
 }
