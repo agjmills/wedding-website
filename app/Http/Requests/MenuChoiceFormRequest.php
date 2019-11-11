@@ -18,9 +18,12 @@ class MenuChoiceFormRequest extends FormRequest
     {
         return [
             'adult_name.*' => 'required|string|min:3',
-            'adult_starter.*' => 'required|integer',
-            'adult_main_course.*' => 'required|integer',
-            'adult_dessert.*' => 'required|integer',
+            'adult_starter.*' => 'required|integer|exists:starters',
+            'adult_main_course.*' => 'required|integer|exists,main_courses',
+            'adult_dessert.*' => 'required|integer|exists,desserts',
+            'child_starter.*' => 'nullable|exists:starters',
+            'child_main_course.*' => 'nullable|exists:main_courses',
+            'child_dessert.*' => 'nullable|exists:desserts',
         ];
     }
 
