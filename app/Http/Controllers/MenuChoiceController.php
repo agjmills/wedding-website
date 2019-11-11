@@ -51,8 +51,7 @@ class MenuChoiceController extends Controller
             $choice->update($child);
         }
 
-        Mail::to($rsvp->email)->bcc('alex@asdfx.us')->send(new MenuChoiceConfirmation($rsvp));
-
+        Mail::to($rsvp->email)->bcc('alex@asdfx.us')->send(new MenuChoiceConfirmation($rsvp->fresh()));
         return redirect()->route('menu-choices.show', $rsvp);
     }
 
