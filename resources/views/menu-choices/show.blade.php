@@ -28,26 +28,28 @@
                     </div>
                 @endforeach
 
-                <h2>Children</h2>
-                @foreach($rsvp->child_choices as $child)
-                    <div class="card col-md-8 offset-2 mb-3">
-                        <div class="card-header">
-                            <strong>Name:</strong> {{ $child->name }}
+                @if ($rsvp->child_choices()->count() > 0)
+                    <h2>Children</h2>
+                    @foreach($rsvp->child_choices as $child)
+                        <div class="card col-md-8 offset-2 mb-3">
+                            <div class="card-header">
+                                <strong>Name:</strong> {{ $child->name }}
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    <strong>Starter:</strong> {{ $child->starter ? $child->starter->name : 'No starter' }}
+                                </p>
+                                <p><strong>Main
+                                        Course:</strong> {{ $child->main_course ? $child->main_course->name : 'No main course' }}
+                                </p>
+                                <p>
+                                    <strong>Dessert:</strong> {{ $child->dessert ? $child->dessert->name : 'No dessert' }}
+                                </p>
+                                <p><strong>Special Requirements:</strong> {{ $child->dietary }}</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <p>
-                                <strong>Starter:</strong> {{ $child->starter ? $child->starter->name : 'No starter' }}
-                            </p>
-                            <p><strong>Main
-                                    Course:</strong> {{ $child->main_course ? $child->main_course->name : 'No main course' }}
-                            </p>
-                            <p>
-                                <strong>Dessert:</strong> {{ $child->dessert ? $child->dessert->name : 'No dessert' }}
-                            </p>
-                            <p><strong>Special Requirements:</strong> {{ $child->dietary }}</p>
-                        </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
