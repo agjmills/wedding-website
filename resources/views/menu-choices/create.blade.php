@@ -141,7 +141,7 @@
                                         </div>
                                     @endforeach
 
-                                    @if ($rsvp->child_choices)
+                                    @if ($rsvp->child_choices()->count() > 0)
                                         <h2>Children</h2>
                                         @foreach($rsvp->child_choices as $child)
                                             <div class="card col-md-8 offset-2 mb-3">

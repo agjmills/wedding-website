@@ -24,7 +24,7 @@
         <hr>
     @endforeach
 
-    @if ($rsvp->child_choices)
+    @if ($rsvp->child_choices()->count() > 0)
         <h3>Children</h3>
         @foreach($rsvp->child_choices as $child)
             <p>
