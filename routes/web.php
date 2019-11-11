@@ -20,7 +20,7 @@ Route::get('venue', function () {
 })->name('venue');
 
 Route::get('accommodations', function () {
-    return view('accomodations');
+    return view('accommodations');
 })->name('accommodations');
 
 Route::get('contact', function () {

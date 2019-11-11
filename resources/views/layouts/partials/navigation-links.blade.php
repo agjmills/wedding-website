@@ -10,12 +10,12 @@
         <span class="sr-only">(current)</span>
     @endif
 </a>
-{{--<a class="nav-item nav-link {{ request()->is('accommodations') ? 'active' : '' }}" href="{{ route('accommodations') }}">--}}
-    {{--Accommodations--}}
-    {{--@if (request()->is('accommodations'))--}}
-        {{--<span class="sr-only">(current)</span>--}}
-    {{--@endif--}}
-{{--</a>--}}
+<a class="nav-item nav-link {{ request()->is('accommodations') ? 'active' : '' }}" href="{{ route('accommodations') }}">
+    Accommodations
+    @if (request()->is('accommodations'))
+        <span class="sr-only">(current)</span>
+    @endif
+</a>
 <a class="nav-item nav-link {{ request()->is('rsvp') ? 'active' : '' }}" href="{{ route('rsvp.index') }}">
     RSVP
     @if (request()->is('rsvp'))
