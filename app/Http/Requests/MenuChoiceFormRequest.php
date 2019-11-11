@@ -51,7 +51,7 @@ class MenuChoiceFormRequest extends FormRequest
 
         $children = [];
         $this->rsvp->child_choices->each(function (ChildChoice $choice) use (&$children, $input) {
-            $adults[$choice->id] = [
+            $children[$choice->id] = [
                 'name' => Arr::get($input, 'child_name.' . $choice->id),
                 'starter_id' => Arr::get($input, 'child_starter.' . $choice->id),
                 'main_course_id' => Arr::get($input, 'child_main_course.' . $choice->id),

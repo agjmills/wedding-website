@@ -24,23 +24,25 @@
         <hr>
     @endforeach
 
-    <h3>Children</h3>
-    @foreach($rsvp->child_choices as $child)
-        <p>
-            <strong>Name</strong>: {{ $child->name }}
-        </p>
-        <p>
-            <strong>Starter</strong>: {{ $child->starter ? $child->starter->name : 'No starter' }}
-        </p>
-        <p>
-            <strong>Main Course</strong>: {{ $child->main_course ? $child->main_course->name : 'No main course' }}
-        </p>
-        <p>
-            <strong>Dessert</strong>: {{ $child->dessert ? $child->dessert->name : 'No dessert' }}
-        </p>
-        <p>
-            <strong>Special Requirements</strong>: {{ $child->dietary }}
-        </p>
-        <hr>
-    @endforeach
+    @if ($rsvp->child_choices)
+        <h3>Children</h3>
+        @foreach($rsvp->child_choices as $child)
+            <p>
+                <strong>Name</strong>: {{ $child->name }}
+            </p>
+            <p>
+                <strong>Starter</strong>: {{ $child->starter ? $child->starter->name : 'No starter' }}
+            </p>
+            <p>
+                <strong>Main Course</strong>: {{ $child->main_course ? $child->main_course->name : 'No main course' }}
+            </p>
+            <p>
+                <strong>Dessert</strong>: {{ $child->dessert ? $child->dessert->name : 'No dessert' }}
+            </p>
+            <p>
+                <strong>Special Requirements</strong>: {{ $child->dietary }}
+            </p>
+            <hr>
+        @endforeach
+    @endif
 @stop

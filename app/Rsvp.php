@@ -12,6 +12,8 @@ class Rsvp extends Model
 
     protected $fillable = ['name', 'email', 'telephone', 'attending', 'message', 'uuid'];
 
+    protected $with = ['adult_choices', 'child_choices'];
+
     protected static function boot()
     {
         parent::boot();

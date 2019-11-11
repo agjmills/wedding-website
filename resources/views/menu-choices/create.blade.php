@@ -33,7 +33,9 @@
                                                 <li class="list-group-item">
                                                     <div class="form-group">
                                                         <label for="adult_name[{{ $adult->id }}]">Name</label>
-                                                        <input type="text" class="form-control" name="adult_name[{{ $adult->id }}]" id="adult_name[{{ $adult->id }}]"
+                                                        <input type="text" class="form-control"
+                                                               name="adult_name[{{ $adult->id }}]"
+                                                               id="adult_name[{{ $adult->id }}]"
                                                                value="{{ isset($adult->name) ? $adult->name : old('adult_name.'.$adult->id) }}">
                                                         @if ($errors->has('adult_name.'.$adult->id.''))
                                                             <span
@@ -51,10 +53,11 @@
                                                             @foreach($adult_starters as $starter)
                                                                 @if (isset($adult->starter_id) && $adult->starter_id === $starter->id)
                                                                     <option
-                                                                        value="{{ $starter->id }}" selected>{{ $starter->name }}</option>
+                                                                        value="{{ $starter->id }}"
+                                                                        selected>{{ $starter->name }}</option>
                                                                 @else
-                                                                <option
-                                                                    value="{{ $starter->id }}">{{ $starter->name }}</option>
+                                                                    <option
+                                                                        value="{{ $starter->id }}">{{ $starter->name }}</option>
                                                                 @endif
                                                             @endforeach
                                                         </select>
@@ -77,10 +80,11 @@
                                                             @foreach($adult_main_courses as $main_course)
                                                                 @if (isset($adult->main_course_id) && $main_course->id === $adult->main_course_id)
                                                                     <option
-                                                                        value="{{ $main_course->id }}" selected>{{ $main_course->name }}</option>
+                                                                        value="{{ $main_course->id }}"
+                                                                        selected>{{ $main_course->name }}</option>
                                                                 @else
-                                                                <option
-                                                                    value="{{ $main_course->id }}">{{ $main_course->name }}</option>
+                                                                    <option
+                                                                        value="{{ $main_course->id }}">{{ $main_course->name }}</option>
                                                                 @endif
                                                             @endforeach
                                                         </select>
@@ -102,25 +106,30 @@
                                                             @foreach($adult_desserts as $dessert)
                                                                 @if (isset($adult->dessert_id) && $dessert->id === $adult->dessert_id)
                                                                     <option
-                                                                        value="{{ $dessert->id }}" selected>{{ $dessert->name }}</option>
+                                                                        value="{{ $dessert->id }}"
+                                                                        selected>{{ $dessert->name }}</option>
                                                                 @else
-                                                                <option
-                                                                    value="{{ $dessert->id }}">{{ $dessert->name }}</option>
+                                                                    <option
+                                                                        value="{{ $dessert->id }}">{{ $dessert->name }}</option>
                                                                 @endif
                                                             @endforeach
                                                         </select>
 
                                                         @if ($errors->has('adult_dessert.'.$adult->id.''))
                                                             <p>
-                                                                <span class="text-danger">{{ $errors->first('adult_dessert.'.$adult->id.'') }}</span>
+                                                                <span
+                                                                    class="text-danger">{{ $errors->first('adult_dessert.'.$adult->id.'') }}</span>
                                                             </p>
                                                         @endif
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item">
                                                     <div class="form-group">
-                                                        <label for="adult_requirements[{{ $adult->id }}]">Special/Dietary Requirements</label>
-                                                        <input type="text" class="form-control" name="adult_requirements[{{ $adult->id }}]" id="adult_requirements[{{ $adult->id }}]"
+                                                        <label for="adult_requirements[{{ $adult->id }}]">Special/Dietary
+                                                            Requirements</label>
+                                                        <input type="text" class="form-control"
+                                                               name="adult_requirements[{{ $adult->id }}]"
+                                                               id="adult_requirements[{{ $adult->id }}]"
                                                                value="{{ isset($adult->dietary) ? $adult->dietary : old('adult_requirements.'.$adult->id) }}">
                                                         @if ($errors->has('adult_requirements.'.$adult->id.''))
                                                             <span
@@ -132,109 +141,119 @@
                                         </div>
                                     @endforeach
 
-                                    <h2>Children</h2>
-                                    @foreach($rsvp->child_choices as $child)
-
-                                        <div class="card col-md-8 offset-2 mb-3">
-                                            <div class="card-header">
-                                                Child {{ $loop->index +1 }}
+                                    @if ($rsvp->child_choices)
+                                        <h2>Children</h2>
+                                        @foreach($rsvp->child_choices as $child)
+                                            <div class="card col-md-8 offset-2 mb-3">
+                                                <div class="card-header">
+                                                    Child {{ $loop->index +1 }}
+                                                </div>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">
+                                                        <div class="form-group">
+                                                            <label for="child_name[{{ $child->id }}]">Name</label>
+                                                            <input type="text" class="form-control"
+                                                                   name="child_name[{{ $child->id }}]"
+                                                                   id="child_name[{{ $child->id }}]"
+                                                                   value="{{ isset($child->name) ? $child->name : old('name') }}">
+                                                            @if ($errors->has('name'))
+                                                                <span
+                                                                    class="text-danger">{{ $errors->first('name') }}</span>
+                                                            @endif
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="form-group">
+                                                            <label for="name">Starter</label>
+                                                            <select name="child_starter[{{ $child->id }}]">
+                                                                <option class="custom-select" selected>Please select a
+                                                                    starter
+                                                                </option>
+                                                                @foreach($child_starters as $starter)
+                                                                    @if (isset($child->starter_id) && $starter->id === $child->starter_id)
+                                                                        <option
+                                                                            value="{{ $starter->id }}"
+                                                                            selected>{{ $starter->name }}</option>
+                                                                    @else
+                                                                        <option
+                                                                            value="{{ $starter->id }}">{{ $starter->name }}</option>
+                                                                    @endif
+                                                                @endforeach
+                                                            </select>
+                                                            @if ($errors->has('child_starter.'.$child->id))
+                                                                <span
+                                                                    class="text-danger">{{ $errors->first('child_starter.'.$child->id) }}</span>
+                                                            @endif
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="form-group">
+                                                            <label for="child_main_course[{{ $child->id }}]">Main Course</label>
+                                                            <select name="child_main_course[{{ $child->id }}]">
+                                                                <option class="custom-select" selected>Please select a
+                                                                    main
+                                                                    course
+                                                                </option>
+                                                                @foreach($child_main_courses as $main_course)
+                                                                    @if (isset($child->main_course_id) && $main_course->id === $child->main_course_id)
+                                                                        <option
+                                                                            value="{{ $main_course->id }}"
+                                                                            selected>{{ $main_course->name }}</option>
+                                                                    @else
+                                                                        <option
+                                                                            value="{{ $main_course->id }}">{{ $main_course->name }}</option>
+                                                                    @endif
+                                                                @endforeach
+                                                            </select>
+                                                            @if ($errors->has('child_main_course.'.$child->id))
+                                                                <span
+                                                                    class="text-danger">{{ $errors->first('child_main_course.'. $child->id) }}</span>
+                                                            @endif
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="form-group">
+                                                            <label for="child_dessert[{{ $child->id }}]">Dessert</label>
+                                                            <select name="child_dessert[{{ $child->id }}]">
+                                                                <option class="custom-select" selected>Please select a
+                                                                    dessert
+                                                                </option>
+                                                                @foreach($child_desserts as $dessert)
+                                                                    @if (isset($child->dessert_id) && $dessert->id === $child->dessert_id)
+                                                                        <option
+                                                                            value="{{ $dessert->id }}"
+                                                                            selected>{{ $dessert->name }}</option>
+                                                                    @else
+                                                                        <option
+                                                                            value="{{ $dessert->id }}">{{ $dessert->name }}</option>
+                                                                    @endif
+                                                                @endforeach
+                                                            </select>
+                                                            @if ($errors->has('child_dessert.'. $child->id))
+                                                                <span
+                                                                    class="text-danger">{{ $errors->first('child_dessert.'.$child->id) }}</span>
+                                                            @endif
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <div class="form-group">
+                                                            <label for="child_requirements[{{ $child->id }}]">Special/Dietary
+                                                                Requirements</label>
+                                                            <input type="text" class="form-control"
+                                                                   name="child_requirements[{{ $child->id }}]"
+                                                                   id="child_requirements[{{ $child->id }}]"
+                                                                   value="{{ isset($child->dietary) ? $child->dietary : old('child_requirements.'.$child->id) }}">
+                                                            @if ($errors->has('child_requirements.'.$child->id.''))
+                                                                <span
+                                                                    class="text-danger">{{ $errors->first('child_requirements.'.$child->id) }}</span>
+                                                            @endif
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </div>
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">
-                                                    <div class="form-group">
-                                                        <label for="name">Name</label>
-                                                        <input type="text" class="form-control" name="name" id="name"
-                                                               value="{{ isset($child->name) ? $child->name : old('name') }}">
-                                                        @if ($errors->has('name'))
-                                                            <span
-                                                                class="text-danger">{{ $errors->first('name') }}</span>
-                                                        @endif
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="form-group">
-                                                        <label for="name">Starter</label>
-                                                        <select name="starter">
-                                                            <option class="custom-select" selected>Please select a
-                                                                starter
-                                                            </option>
-                                                            @foreach($child_starters as $starter)
-                                                                @if (isset($child->starter_id) && $starter->id === $child->starter_id)
-                                                                    <option
-                                                                        value="{{ $starter->id }}" selected>{{ $starter->name }}</option>
-                                                                @else
-                                                                <option
-                                                                    value="{{ $starter->id }}">{{ $starter->name }}</option>
-                                                                @endif
-                                                            @endforeach
-                                                        </select>
-                                                        @if ($errors->has('starter'))
-                                                            <span
-                                                                class="text-danger">{{ $errors->first('starter') }}</span>
-                                                        @endif
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="form-group">
-                                                        <label for="name">Main Course</label>
-                                                        <select name="main_course">
-                                                            <option class="custom-select" selected>Please select a main
-                                                                course
-                                                            </option>
-                                                            @foreach($child_main_courses as $main_course)
-                                                                @if (isset($child->main_course_id) && $main_course->id === $child->main_course_id)
-                                                                    <option
-                                                                        value="{{ $main_course->id }}" selected>{{ $main_course->name }}</option>
-                                                                @else
-                                                                <option
-                                                                    value="{{ $main_course->id }}">{{ $main_course->name }}</option>
-                                                                @endif
-                                                            @endforeach
-                                                        </select>
-                                                        @if ($errors->has('main_course'))
-                                                            <span
-                                                                class="text-danger">{{ $errors->first('main_course') }}</span>
-                                                        @endif
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="form-group">
-                                                        <label for="name">Dessert</label>
-                                                        <select name="starter">
-                                                            <option class="custom-select" selected>Please select a
-                                                                dessert
-                                                            </option>
-                                                            @foreach($child_desserts as $dessert)
-                                                                @if (isset($child->dessert_id) && $dessert->id === $child->dessert_id)
-                                                                    <option
-                                                                        value="{{ $dessert->id }}" selected>{{ $dessert->name }}</option>
-                                                                @else
-                                                                    <option
-                                                                        value="{{ $dessert->id }}">{{ $dessert->name }}</option>
-                                                                @endif
-                                                            @endforeach
-                                                        </select>
-                                                        @if ($errors->has('dessert'))
-                                                            <span
-                                                                class="text-danger">{{ $errors->first('dessert') }}</span>
-                                                        @endif
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <div class="form-group">
-                                                        <label for="child_requirements[{{ $child->id }}]">Special/Dietary Requirements</label>
-                                                        <input type="text" class="form-control" name="child_requirements[{{ $child->id }}]" id="child_requirements[{{ $child->id }}]"
-                                                               value="{{ isset($child->dietary) ? $child->dietary : old('child_requirements.'.$child->id) }}">
-                                                        @if ($errors->has('child_requirements.'.$child->id.''))
-                                                            <span
-                                                                class="text-danger">{{ $errors->first('child_requirements.'.$child->id) }}</span>
-                                                        @endif
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
                                 </div>
+                                @endif
                                 <div class="card-footer">
                                     <li class="list-group-item text-center">
                                         <input type="submit" class="btn btn-lg btn-primary pull-right"
