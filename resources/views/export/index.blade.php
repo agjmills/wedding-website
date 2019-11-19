@@ -13,6 +13,7 @@
                         <th>Starter</th>
                         <th>Main Course</th>
                         <th>Dessert</th>
+                        <th>Requirements</th>
                     </tr>
                     @foreach($adults as $adult)
                         <tr>
@@ -20,6 +21,7 @@
                             <td>{{ $adult->starter->name }}</td>
                             <td>{{ $adult->main_course->name }}</td>
                             <td>{{ $adult->dessert->name }}</td>
+                            <td>{{ $adult->dietary }}</td>
                         </tr>
                     @endforeach
                     @foreach($children as $child)
@@ -28,6 +30,7 @@
                             <td>{{ $child->starter->name }}</td>
                             <td>{{ $child->main_course->name }}</td>
                             <td>{{ $child->dessert->name }}</td>
+                            <td>{{ $adult->dietary }}</td>
                         </tr>
                     @endforeach
                 </table>
