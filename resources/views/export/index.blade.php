@@ -7,6 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Export</h1>
+                <p>{{ $completed }} out of {{ $total }} have made their choices</p>
                 <table class="table table-hover table-striped table-responsive">
                     <tr>
                         <th>Person Name</th>
