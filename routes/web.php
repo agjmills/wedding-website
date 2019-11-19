@@ -33,3 +33,4 @@ Route::get('rsvp/thank-you', 'RsvpController@show')->name('rsvp.show');
 Route::get('menu-choices/{rsvp}', 'MenuChoiceController@create')->name('menu-choices.create');
 Route::post('menu-choices/{rsvp}', 'MenuChoiceController@update')->name('menu-choices.update');
 Route::get('menu-choices/{rsvp}/complete', 'MenuChoiceController@show')->name('menu-choices.show');
+Route::get('export', 'ExportController@index')->name('export');
