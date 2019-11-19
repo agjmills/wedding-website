@@ -14,11 +14,8 @@ class ExportController extends Controller
         return view(
             'export.index',
             [
-                'adults' => AdultChoice::whereHas('starter')
-                    ->whereHas('main_course')
-                    ->whereHas('dessert')
-                    ->get(),
-                'children' => ChildChoice::all(),
+                'adults' => AdultChoice::whereNotNull('name')->get(),
+                'children' => ChildChoice::whereNotNull('name')->get(),
             ]
         );
     }
