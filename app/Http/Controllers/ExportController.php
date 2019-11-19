@@ -11,6 +11,15 @@ class ExportController extends Controller
 {
     public function index(): View
     {
-        return view('export.index', ['adults' => AdultChoice::whereHas('starter')->get(), 'children' => ChildChoice::all()]);
+        return view(
+            'export.index',
+            [
+                'adults' => AdultChoice::whereHas('starter')
+                    ->whereHas('main_course')
+                    ->whereHas('dessert')
+                    ->get(),
+                'children' => ChildChoice::all(),
+            ]
+        );
     }
 }
