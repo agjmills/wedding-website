@@ -7,7 +7,6 @@ use App\ChildChoice;
 use App\Dessert;
 use App\Http\Requests\MenuChoiceFormRequest;
 use App\Mail\MenuChoiceConfirmation;
-use App\Mail\RSVPConfirmation;
 use App\MainCourse;
 use App\Rsvp;
 use App\Starter;
@@ -39,7 +38,7 @@ class MenuChoiceController extends Controller
 
     public function update(MenuChoiceFormRequest $request, Rsvp $rsvp)
     {
-        $input = $request->all();
+        $input = $request->validated();
 
         foreach ($input['adults'] as $id => $adult) {
             $choice = AdultChoice::find($id);

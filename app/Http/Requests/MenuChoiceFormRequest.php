@@ -18,12 +18,12 @@ class MenuChoiceFormRequest extends FormRequest
     {
         return [
             'adult_name.*' => 'required|string|min:3',
-            'adult_starter.*' => 'required|integer|exists:starters',
-            'adult_main_course.*' => 'required|integer|exists,main_courses',
-            'adult_dessert.*' => 'required|integer|exists,desserts',
-            'child_starter.*' => 'nullable|exists:starters',
-            'child_main_course.*' => 'nullable|exists:main_courses',
-            'child_dessert.*' => 'nullable|exists:desserts',
+            'adult_starter.*' => 'required|integer|exists:starters,id',
+            'adult_main_course.*' => 'required|integer|exists:main_courses,id',
+            'adult_dessert.*' => 'required|integer|exists:desserts,id',
+            'child_starter.*' => 'nullable|exists:starters,id',
+            'child_main_course.*' => 'nullable|exists:main_courses,id',
+            'child_dessert.*' => 'nullable|exists:desserts,id',
         ];
     }
 
@@ -38,10 +38,11 @@ class MenuChoiceFormRequest extends FormRequest
         ];
     }
 
-    protected function prepareForValidation()
+    public function validated()
     {
         $input = $this->all();
         $adults = [];
+
         $this->rsvp->adult_choices->each(function (AdultChoice $choice) use (&$adults, $input) {
             $adults[$choice->id] = [
                 'name' => Arr::get($input, 'adult_name.' . $choice->id),
@@ -63,7 +64,6 @@ class MenuChoiceFormRequest extends FormRequest
             ];
         });
 
-        $input = ['adults' => $adults, 'children' => $children];
-        $this->replace($input);
+        return ['adults' => $adults, 'children' => $children];
     }
 }
