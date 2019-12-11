@@ -7,6 +7,22 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Export</h1>
+                <table class="table table-hover table-striped">
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                    @foreach($incompleteAdults as $adult)
+                        <tr>
+                            <td>{{ $adult->rsvp->name }}</td>
+                        </tr>
+                    @endforeach
+                    @foreach($incompleteChildren as $child)
+                        <tr>
+                            <td>{{ $child->rsvp->name }}</td>
+                        </tr>
+                    @endforeach
+
+                </table>
                 <p>{{ $completed }} out of {{ $total }} have made their choices</p>
                 <table class="table table-hover table-striped table-responsive">
                     <tr>

@@ -13,12 +13,13 @@ class ExportController extends Controller
     {
         $total = AdultChoice::count() + ChildChoice::count();
         $completed = AdultChoice::whereNotNull('name')->count() + ChildChoice::whereNotNull('name')->count();
-
         return view(
             'export.index',
             [
                 'adults' => AdultChoice::whereNotNull('name')->get(),
                 'children' => ChildChoice::whereNotNull('name')->get(),
+                'incompleteAdults' => AdultChoice::whereNull('name')->get(),
+                'incompleteChildren' => ChildChoice::whereNull('name')->get(),
                 'total' => $total,
                 'completed' => $completed,
             ]
