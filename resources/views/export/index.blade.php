@@ -7,6 +7,8 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Export</h1>
+
+                <h2>People who have not made their food choices:</h2>
                 <table class="table table-hover table-striped">
                     <tr>
                         <th>Name</th>
@@ -23,6 +25,9 @@
                     @endforeach
 
                 </table>
+
+                <hr>
+                <h2>People who have made their food choices:</h2>
                 <p>{{ $completed }} out of {{ $total }} have made their choices</p>
                 <table class="table table-hover table-striped table-responsive">
                     <tr>
