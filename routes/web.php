@@ -23,6 +23,14 @@ Route::get('accommodations', function () {
     return view('accommodations');
 })->name('accommodations');
 
+Route::get('order-of-service', function () {
+    return view('order-of-service');
+})->name('order-of-service');
+
+Route::get('gifts', function() {
+   return view('gifts');
+})->name('gifts');
+
 Route::get('contact', function () {
     return view('contact');
 })->name('contact');

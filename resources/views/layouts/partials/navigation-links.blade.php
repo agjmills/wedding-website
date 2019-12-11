@@ -10,6 +10,19 @@
         <span class="sr-only">(current)</span>
     @endif
 </a>
+<a class="nav-item nav-link {{ request()->is('order-of-service') ? 'active' : '' }}" href="{{ route('order-of-service') }}">
+    Order of Service
+    @if (request()->is('order-of-service'))
+        <span class="sr-only">(current)</span>
+    @endif
+</a>
+<a class="nav-item nav-link" {{ request()->is('gifts') ? 'active' : '' }} href="{{ route('gifts') }}">
+    Gifts
+    @if (request()->is('gifts'))
+        <span class="sr-only">(current)</span>
+    @endif
+
+</a>
 <a class="nav-item nav-link {{ request()->is('accommodations') ? 'active' : '' }}" href="{{ route('accommodations') }}">
     Accommodations
     @if (request()->is('accommodations'))
