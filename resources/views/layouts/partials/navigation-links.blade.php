@@ -16,7 +16,7 @@
         <span class="sr-only">(current)</span>
     @endif
 </a>
-<a class="nav-item nav-link" {{ request()->is('gifts') ? 'active' : '' }} href="{{ route('gifts') }}">
+<a class="nav-item nav-link {{ request()->is('gifts') ? 'active' : '' }}" href="{{ route('gifts') }}">
     Gifts
     @if (request()->is('gifts'))
         <span class="sr-only">(current)</span>
