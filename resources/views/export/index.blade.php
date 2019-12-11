@@ -12,15 +12,14 @@
                 <table class="table table-hover table-striped">
                     <tr>
                         <th>Name</th>
+                        <th>Adults</th>
+                        <th>Children</th>
                     </tr>
-                    @foreach($incompleteAdults as $adult)
+                    @foreach($incompletes as $incomplete)
                         <tr>
-                            <td>{{ $adult->rsvp->name }}</td>
-                        </tr>
-                    @endforeach
-                    @foreach($incompleteChildren as $child)
-                        <tr>
-                            <td>{{ $child->rsvp->name }}</td>
+                            <td>{{ $incomplete->name }}</td>
+                            <td>{{ $incomplete->adult_choices()->count() }}</td>
+                            <td>{{ $incomplete->child_choices()->count() }}</td>
                         </tr>
                     @endforeach
 
