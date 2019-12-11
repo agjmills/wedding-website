@@ -1,6 +1,6 @@
 @extends('layouts.wedding')
 
-@section('title', 'Veronika & Alex | Gifts')
+@section('title', 'Veronika & Alex | Order of Service')
 
 @section('content')
     <div class="container-fluid">
