@@ -5,8 +5,11 @@
 @section('content')
     <div class="container-fluid">
         <div class="row mt-5 mb-5">
-            <div class="col-md-6 offset-3 text-center">
+            <div class="col-md-12 col-lg-6 offset-lg-3 text-center">
                 <h1>Order of Service</h1>
+                <p>
+                    <small>All timings are approximate, and subject to change.</small>
+                </p>
                 <table class="table table-hover table-striped">
                     <tr>
                         <th>12:30</th>
@@ -25,20 +28,20 @@
                         <td>Welcome Drink, Photographs &amp; Canap&eacute;s</td>
                     </tr>
                     <tr>
-                        <th>14:30</th>
+                        <th>15:30</th>
                         <td>Wedding Breakfast</td>
                     </tr>
                     <tr>
-                        <th>?</th>
+                        <th>19:00</th>
                         <td>Cut the cake</td>
                     </tr>
                     <tr>
-                        <th>?</th>
-                        <td>Second dance</td>
+                        <th>19:30</th>
+                        <td>First dance</td>
                     </tr>
                     <tr>
-                        <th>?</th>
-                        <td>Party</td>
+                        <th>19:45</th>
+                        <td>Party starts here!</td>
                     </tr>
                 </table>
             </div>
