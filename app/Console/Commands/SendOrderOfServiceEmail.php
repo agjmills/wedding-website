@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Mail\MenuChoiceSelection;
 use App\Mail\OrderOfService;
 use App\Rsvp;
 use Illuminate\Console\Command;
