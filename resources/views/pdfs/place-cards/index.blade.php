@@ -39,7 +39,9 @@
                 {{ $choice->main_course->name }}
             </p>
             <p>
-                {{ $choice->dessert->name }}
+                @if ($choice->dessert)
+                    {{ $choice->dessert->name }}
+                @endif
             </p>
             </p>
         </div>
@@ -49,7 +51,7 @@
         </div>
     </div>
     @if ($loop->iteration % 2 === 0)
-        <div style="clear: both; height: 10px"></div>
+        <div style="clear: both; height: 5px"></div>
     @else
         <div style="width: 2%; float: left;"></div>
     @endif

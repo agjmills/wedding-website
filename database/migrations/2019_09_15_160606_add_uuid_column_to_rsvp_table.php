@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Ramsey\Uuid\Uuid;
 
 class AddUuidColumnToRsvpTable extends Migration
 {
@@ -23,6 +24,7 @@ class AddUuidColumnToRsvpTable extends Migration
         });
 
         Schema::table('rsvp', function (Blueprint $table) {
+
             $table->dropColumn('id');
             $table->string('uuid', 36)->nullable(false)->primary()->change();
         });
