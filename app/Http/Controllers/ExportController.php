@@ -13,12 +13,12 @@ class ExportController extends Controller
     public function index(): View
     {
         $total = AdultChoice::count() + ChildChoice::count();
-        $completed = AdultChoice::whereNotNull('name')->count() + ChildChoice::whereNotNull('name')->count();
+        $completed = AdultChoice::where('wedding', 'cz')->whereNotNull('name')->get();
+        $completed->each(function(AdultChoice $choice) {
+            echo '<p>' . $choice->name . ',' . $choice->starter->name . ',' . $choice->main_course->name . '</p>';
+        });
 
-        $incompletes = Rsvp::whereHas('adult_choices', function (Builder $query) {
-            $query->whereNull('name');
-        })->get();
-
+        die();
         return view(
             'export.index',
             [

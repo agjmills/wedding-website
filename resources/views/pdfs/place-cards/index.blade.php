@@ -13,8 +13,8 @@
             padding: .15in;
             font-family: "Allura", cursive;
             margin: 0px;
-            color: #666;
-            font-size: 20px;
+            color: #000;
+            font-size: 30px;
             line-height: 22px;
         }
 
