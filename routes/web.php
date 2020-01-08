@@ -43,3 +43,4 @@ Route::post('menu-choices/{rsvp}', 'MenuChoiceController@update')->name('menu-ch
 Route::get('menu-choices/{rsvp}/complete', 'MenuChoiceController@show')->name('menu-choices.show');
 Route::get('export', 'ExportController@index')->name('export');
 Route::get('place-cards', 'PlaceCardController@index')->name('placecards');
+Route::get('tables', 'TableController@index')->name('tables');
