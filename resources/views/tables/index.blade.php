@@ -14,10 +14,11 @@
                         <th>Starter</th>
                         <th>Main Course</th>
                         <th>Dessert</th>
+                        <th>Special/Dietary Requirements</th>
                     </tr>
                     @foreach($tables as $table => $guests)
                         <tr>
-                            <th colspan="4">Table {{ $table + 1 }} - {{ $guests->count() }} People</th>
+                            <th colspan="5">Table - {{ $guests->count() }} People</th>
                         </tr>
                         @foreach($guests as $guest)
                             <tr>
@@ -32,6 +33,9 @@
                                 </td>
                                 <td>
                                     {{ $guest->dessert->name }}
+                                </td>
+                                <td>
+                                    {{ $guest->dietary }}
                                 </td>
                             </tr>
                         @endforeach
