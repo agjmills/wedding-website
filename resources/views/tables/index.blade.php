@@ -18,7 +18,7 @@
                     </tr>
                     @foreach($tables as $table => $guests)
                         <tr>
-                            <th colspan="5">Table ({{ $guests->count() }} People)</th>
+                            <th colspan="5">Table {{ $guests->first()->table }} - ({{ $guests->count() }} People)</th>
                         </tr>
                         @foreach($guests as $guest)
                             <tr>
