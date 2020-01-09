@@ -10,11 +10,14 @@ class TableController extends Controller
     public function index()
     {
         $tables = collect();
-        foreach(range(1,8) as $table) {
+        $tableNames = ['Top', 1,2,3,4,5,6,7,8];
+        foreach($tableNames as $table) {
             $adults = AdultChoice::where('table', $table)->get();
             $children = ChildChoice::where('table', $table)->get();
             $guests = $adults->concat($children);
-            $tables[] = $guests;
+            if ($guests->count() > 0) {
+                $tables[] = $guests;
+            }
         }
 
         return view('tables.index', ['tables' => $tables]);
