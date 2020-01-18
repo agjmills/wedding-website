@@ -1,5 +1,5 @@
 <?php
-
+  
 namespace App\Http\Controllers;
 
 use App\AdultChoice;
@@ -26,7 +26,8 @@ class TableController extends Controller
     public function export()
     {
         $tables = collect();
-        foreach(range(1,8) as $table) {
+	$tableNames = ['Top', 1,2,3,4,5,6,7,8]
+        foreach($tableNames as $table) {
             $adults = AdultChoice::where('table', $table)->get();
             $children = ChildChoice::where('table', $table)->get();
             $guests = $adults->concat($children);
@@ -43,3 +44,4 @@ class TableController extends Controller
         die();
     }
 }
+
