@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>13:30</th>
-                        <td>Welcome Drink, Photographs &amp; Canap&eacute;s</td>
+                        <td>Photographs, Welcome Drink &amp; Canap&eacute;s</td>
                     </tr>
                     <tr>
                         <th>15:30</th>
