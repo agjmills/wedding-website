@@ -44,4 +44,6 @@ Route::get('menu-choices/{rsvp}/complete', 'MenuChoiceController@show')->name('m
 Route::get('export', 'ExportController@index')->name('export');
 Route::get('place-cards', 'PlaceCardController@index')->name('placecards');
 Route::get('tables', 'TableController@index')->name('tables');
-Route::get('tables/export', 'TableController@export')->name('export-tables');
+Route::get('tables/export', 'TableController@export')->name('tables.export');
+Route::get('tables/export-without-food', 'TableController@exportWithoutFood')->name('tables.export-without-food');
+

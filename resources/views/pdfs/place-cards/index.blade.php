@@ -14,7 +14,7 @@
             font-family: "Allura", cursive;
             margin: 0px;
             color: #000;
-            font-size: 30px;
+            font-size: 22px;
             line-height: 22px;
         }
 

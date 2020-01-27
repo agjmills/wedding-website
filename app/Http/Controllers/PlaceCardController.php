@@ -9,8 +9,8 @@ class PlaceCardController extends Controller
 {
     public function index()
     {
-        $choices = AdultChoice::where('wedding', 'cz')->get();
+        $choices = AdultChoice::all();
         $pdf = PDF::loadView('pdfs.place-cards.index', ['choices' => $choices]);
-        return $pdf->download('invoice.pdf');
+        return $pdf->download('place-cards.pdf');
     }
 }

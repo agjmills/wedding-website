@@ -7,7 +7,11 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Tables</h1>
-
+                <p>
+                    <a href="{{ route('tables.export') }}" class="btn btn-primary">Download as CSV</a>
+                    <a href="{{ route('tables.export-without-food') }}" class="btn btn-primary">Download as CSV without Food Choices</a>
+                    <a href="" class="btn btn-primary">Download place cards</a>
+                </p>
                 <table class="table table-hover table-striped">
                     <tr>
                         <th>Name</th>
