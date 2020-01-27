@@ -37,7 +37,7 @@ class TableController extends Controller
         foreach($tables as $table => $guests) {
             echo 'Table (' . $guests->count() . ' people),Starter,Main Course,Dessert,Dietary Requirements<br>';
             foreach ($guests as $guest) {
-                echo $guest->name . ',' . $guest->starter->name . ',' . $guest->main_course->name . ',' . $guest->dessert->name . ',' . $guest->dietary . '<br>';
+                echo $guest->name . ',"' . $guest->starter->name . '","' . $guest->main_course->name . '","' . $guest->dessert->name . '","' . $guest->dietary . '"<br>';
             }
         }
 
