@@ -10,7 +10,7 @@
                 <p>
                     <a href="{{ route('tables.export') }}" class="btn btn-primary">Download as CSV</a>
                     <a href="{{ route('tables.export-without-food') }}" class="btn btn-primary">Download as CSV without Food Choices</a>
-                    <a href="" class="btn btn-primary">Download place cards</a>
+                    <a href="{{ route('place-cards') }}" class="btn btn-primary">Download place cards</a>
                 </p>
                 <table class="table table-hover table-striped">
                     <tr>

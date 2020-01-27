@@ -28,7 +28,7 @@ class TableController extends Controller
     {
         $headers = [
             'Content-type' => 'text/csv',
-            'Content-Disposition' => 'attachment; filename=export-without-food.csv',
+            'Content-Disposition' => 'attachment; filename=tables.csv',
             'Pragma' => 'no-cache',
             'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
             'Expires' => 0,
@@ -63,7 +63,7 @@ class TableController extends Controller
     {
         $headers = [
             'Content-type' => 'text/csv',
-            'Content-Disposition' => 'attachment; filename=export-without-food.csv',
+            'Content-Disposition' => 'attachment; filename=tables-without-food.csv',
             'Pragma' => 'no-cache',
             'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
             'Expires' => 0,

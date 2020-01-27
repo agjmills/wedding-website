@@ -42,7 +42,7 @@ Route::get('menu-choices/{rsvp}', 'MenuChoiceController@create')->name('menu-cho
 Route::post('menu-choices/{rsvp}', 'MenuChoiceController@update')->name('menu-choices.update');
 Route::get('menu-choices/{rsvp}/complete', 'MenuChoiceController@show')->name('menu-choices.show');
 Route::get('export', 'ExportController@index')->name('export');
-Route::get('place-cards', 'PlaceCardController@index')->name('placecards');
+Route::get('place-cards', 'PlaceCardController@index')->name('place-cards');
 Route::get('tables', 'TableController@index')->name('tables');
 Route::get('tables/export', 'TableController@export')->name('tables.export');
 Route::get('tables/export-without-food', 'TableController@exportWithoutFood')->name('tables.export-without-food');
